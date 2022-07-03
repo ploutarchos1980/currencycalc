@@ -1,0 +1,51 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+index:
+    path: /
+    controller: App\Controller\IndexController::index
+
+currency:
+    path: /currency/
+    controller: App\Controller\CurrencyController::index
+currency_convert:
+    path: /currency/convert
+    controller: App\Controller\CurrencyController::convert
+
+login:
+    path: /login/
+    controller: App\Controller\LoginPageController::index
+login_create_user:
+    path: /login/createUser
+    controller: App\Controller\LoginPageController::createUser
+logout:
+    path: /logout
+    methods: GET
+
+# This is the dashboard you can create, view, update and delete records from SQLite db
+# To enter you need to Authentidate (Username is "User", Password is "User")
+dashboard:
+    path: /dashboard/
+    controller: App\Controller\DashboardController::index
+
+# This route gets all record for use in main page (Home Page)
+dashboard_coins:
+    path: /dashboard/getcoins
+    controller: App\Controller\DashboardController::getcoins
+
+dashboard_action:
+    path: /dashboard/action
+    controller: App\Controller\DashboardController::action
+    methods: POST
+dashboard_action_set:
+    path: /dashboard/action/{todo}
+    controller: App\Controller\DashboardController::action
+    defaults: 
+        todo: ''
+    methods: POST|GET
+
+
+## We enabled this controller once to add some records to the database
+## currency_add:
+##    path: /currency/add
+##    controller: App\Controller\CurrencyController::addCoins */
