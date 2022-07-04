@@ -8,22 +8,18 @@ This is a currency calculator web based.
 - Required SQLite php extention
 - Required Composer 2.3.8 or later
 - Required NodeJS 16.15.1 LTS Version
-
+- Required Git 2.37.0 or later
 
 
 ## Prepare for Windows Installation
 
-The following packages are recommended to be installed on Windows if you are not a Linux user.
+The following packages are recommended to be installed on Windows.
 
- - Latest XAMPP 8.1.6 / PHP 8.1.6
-   https://downloadsapachefriends.global.ssl.fastly.net/8.1.6/xampp-windows-x64-8.1.6-0-VS16-installer.exe
-
- - Latest Composer 2.3.8
-   https://getcomposer.org/Composer-Setup.exe
-
- - Latest LTS Version 16.15.1 of NodeJS 
-   https://nodejs.org/dist/v16.15.1/node-v16.15.1-x64.msi
-
+ - [Latest XAMPP 8.1.6 / PHP 8.1.6](https://downloadsapachefriends.global.ssl.fastly.net/8.1.6/xampp-windows-x64-8.1.6-0-VS16-installer.exe)
+ - [Latest Composer 2.3.8](https://getcomposer.org/Composer-Setup.exe)
+ - [Latest LTS Version 16.15.1 of NodeJS](https://nodejs.org/dist/v16.15.1/node-v16.15.1-x64.msi)
+ - [Latest Git 2.37.0](https://github.com/git-for-windows/git/releases/download/v2.37.0.windows.1/Git-2.37.0-64-bit.exe)
+ 
 
 #### Basic configuration of Apache2.
 
@@ -57,9 +53,13 @@ Here are the steps to do this:
 </VirtualHost>
 ```
 
-Restart the Apache Server and then visit the web location "http://locahost"
+### Clone - Download the project 
 
-**That was it. Congratulation!**
+Go to your document root of your server (in the above case inside the folder "C:/xampp/htdocs/") and excecute the below command.
+
+```
+git clone https://github.com/ploutarchos1980/currencycalc.git
+```
 
 ## Compile and run the project
 
@@ -82,6 +82,10 @@ $ npm install
 $ npm run dev 
 ```
 
+Restart the Apache Server and then visit the web location "http://locahost"
+
+**That was it. Congratulation!**
+
 If everything went OK, you should be able to see the main page as well.
 
 ![This is an image](screenshot.jpg)
@@ -91,12 +95,20 @@ If everything went OK, you should be able to see the main page as well.
 
 You can also run the project with Symfony CLI if it is already installed. 
 
-Running 
+Run inside the folder of the project the following command:
 ```bash
 $ symfony serve 
 ```
 
-#### You can read more about installation and configuration
+## Linux users
+
+For Linux users, you must have installed the same software as well:
+
+**PHP 8.1, Apache 2, SQLite PHP, Composer, NodeJS, and Git to make the project run correctly.**
+
+The configuration of Apache2 is almost the same and the clonning part and compilation are the same as mentioned before.
+
+#### Furthermore, about installation and configuration you can read the following documentations.
 
 [Installation guide](https://symfony.com/doc/current/setup.html)
 
@@ -119,3 +131,4 @@ A user is already created by default and stored in the database.
  - The password is "user"
 
 
+## Thank you for using my currency calculator!
